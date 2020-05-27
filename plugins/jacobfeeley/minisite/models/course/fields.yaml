@@ -1,0 +1,82 @@
+fields:
+    title:
+        label: 'Course Title'
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    tag_line:
+        label: 'Course Tag Line'
+        span: full
+        type: text
+    banner:
+        label: 'Featured Banner'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+tabs:
+    fields:
+        summary:
+            label: Summary
+            size: large
+            span: full
+            type: richeditor
+            commentAbove: 'Max 100 words.'
+            tab: 'Brief summary'
+        skills:
+            label: 'What skills will you learn?'
+            size: huge
+            span: full
+            type: richeditor
+            tab: 'What skills will you learn?'
+        topics_covered:
+            label: 'Topics covered'
+            mode: string
+            separator: comma
+            customTags: true
+            useKey: false
+            span: full
+            type: taglist
+            commentAbove: 'Enter the topic & press enter to add new'
+            tab: 'Topics covered'
+        about_this_field:
+            label: 'About this field'
+            size: huge
+            span: full
+            type: richeditor
+            commentAbove: 'Max 100 words.'
+            tab: 'About this field'
+        why_join:
+            label: 'Why Join This Course?'
+            prompt: 'New Item'
+            maxItems: '5'
+            style: default
+            span: full
+            type: repeater
+            tab: 'Why join this course?'
+            form:
+                fields:
+                    heading:
+                        label: Heading
+                        span: full
+                        type: text
+                    description:
+                        label: Description
+                        size: small
+                        span: full
+                        type: textarea
+        who_for:
+            label: 'Who is this course for?'
+            size: huge
+            span: full
+            type: richeditor
+            tab: 'Who is this course for?'

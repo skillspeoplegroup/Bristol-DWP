@@ -1,0 +1,11 @@
+plugin:
+    name: 'jacobfeeley.minisite::lang.plugin.name'
+    description: 'jacobfeeley.minisite::lang.plugin.description'
+    author: 'Jacob Feeley'
+    icon: oc-icon-graduation-cap
+    homepage: ''
+navigation:
+    main-menu-courses:
+        label: Courses
+        url: jacobfeeley/minisite/courses
+        icon: icon-graduation-cap

@@ -1,0 +1,10 @@
+name: Courses
+form: $/jacobfeeley/minisite/models/course/fields.yaml
+modelClass: JacobFeeley\Minisite\Models\Course
+defaultRedirect: jacobfeeley/minisite/courses
+create:
+    redirect: 'jacobfeeley/minisite/courses/update/:id'
+    redirectClose: jacobfeeley/minisite/courses
+update:
+    redirect: jacobfeeley/minisite/courses
+    redirectClose: jacobfeeley/minisite/courses

@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table jacobfeeley_minisite_courses'
+    - builder_table_create_jacobfeeley_minisite_courses.php
+1.0.3:
+    - 'Updated table jacobfeeley_minisite_courses'
+    - builder_table_update_jacobfeeley_minisite_courses.php

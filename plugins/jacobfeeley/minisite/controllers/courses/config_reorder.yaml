@@ -1,0 +1,4 @@
+title: Courses
+modelClass: JacobFeeley\Minisite\Models\Course
+toolbar:
+    buttons: reorder_toolbar
