@@ -7,7 +7,7 @@ fields:
         label: 'Learner Testimonial'
         size: small
         span: full
-        type: richeditor
+        type: textarea
     image:
         label: 'Learner Image'
         mode: file
