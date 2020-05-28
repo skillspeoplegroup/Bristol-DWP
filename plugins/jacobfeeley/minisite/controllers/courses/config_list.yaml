@@ -1,12 +1,15 @@
-list: $/jacobfeeley/minisite/models/course/columns.yaml
-modelClass: JacobFeeley\Minisite\Models\Course
 title: Courses
+modelClass: JacobFeeley\Minisite\Models\Course
+list: $/jacobfeeley/minisite/models/course/columns.yaml
+recordUrl: 'jacobfeeley/minisite/courses/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
 showSetup: true
 showCheckboxes: true
-recordsPerPage: 20
+defaultSort:
+    column: id
+    direction: asc
 toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'jacobfeeley/minisite/courses/update/:id'
