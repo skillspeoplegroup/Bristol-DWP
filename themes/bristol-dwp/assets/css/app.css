@@ -38058,12 +38058,12 @@ html {
   display: none;
 }
 
-ol,
 ul {
   list-style: initial;
 }
 
-.paragraphs-spaced > p {
+.spaced > p,
+.spaced > li {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
