@@ -8,3 +8,12 @@ fields:
         size: small
         span: full
         type: richeditor
+    image:
+        label: 'Learner Image'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
