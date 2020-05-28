@@ -9,3 +9,6 @@
 1.0.4:
     - 'Created table jacobfeeley_minisite_testimonials'
     - builder_table_create_jacobfeeley_minisite_testimonials.php
+1.0.5:
+    - 'Updated table jacobfeeley_minisite_courses'
+    - builder_table_update_jacobfeeley_minisite_courses_2.php

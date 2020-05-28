@@ -26,8 +26,7 @@ class Course extends Model
     ];
 
     protected $jsonable = [
-       'topics_covered',
-       'why_join',
+       'why_join'
      ];
 
     public $attachOne = [

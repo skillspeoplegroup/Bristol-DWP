@@ -1,6 +1,10 @@
 [builderList]
 modelClass = "JacobFeeley\Minisite\Models\Course"
+scopeValue = "{{ :scope }}"
 displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
 <div x-data="{ enrol: false }" x-subscribe x-cloak>
     <div x-show.transition.opacity="$store.enrol.open"
@@ -44,7 +48,7 @@ displayColumn = "title"
                                     />
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-4">
+                                <div class="col-span-6 sm:col-span-6">
                                     <label for="email"
                                            class="block text-sm font-medium leading-5 text-gray-700"
                                     >Email address
@@ -54,12 +58,22 @@ displayColumn = "title"
                                     />
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-4">
+                                <div class="col-span-6 sm:col-span-3">
                                     <label for="phone"
                                            class="block text-sm font-medium leading-5 text-gray-700"
                                     >Phone number
                                     </label>
                                     <input type="tel" id="phone" placeholder="+44 7000 000000"
+                                           class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                                    />
+                                </div>
+                                
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="postcode"
+                                           class="block text-sm font-medium leading-5 text-gray-700"
+                                    >Postcode
+                                    </label>
+                                    <input id="postcode" placeholder="EX4 MPL"
                                            class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                                     />
                                 </div>
@@ -77,15 +91,6 @@ displayColumn = "title"
                                     </select>
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-3">
-                                    <label for="postcode"
-                                           class="block text-sm font-medium leading-5 text-gray-700"
-                                    >Postcode
-                                    </label>
-                                    <input id="postcode" placeholder="EX4 MPL"
-                                           class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                                    />
-                                </div>
                             </div>
                         </form>
                     </div>
