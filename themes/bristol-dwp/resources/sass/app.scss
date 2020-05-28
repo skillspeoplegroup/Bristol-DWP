@@ -1,4 +1,4 @@
-  
+
 @tailwind base;
 
 @tailwind components;
@@ -11,4 +11,14 @@ html {
 
 [x-cloak] {
     display: none;
+}
+
+ol,
+ul {
+    list-style: initial;
+}
+
+.paragraphs-spaced > p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

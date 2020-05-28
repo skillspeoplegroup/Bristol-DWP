@@ -38058,6 +38058,16 @@ html {
   display: none;
 }
 
+ol,
+ul {
+  list-style: initial;
+}
+
+.paragraphs-spaced > p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
