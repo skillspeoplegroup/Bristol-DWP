@@ -1,3 +1,6 @@
+[builderList]
+modelClass = "JacobFeeley\Minisite\Models\Course"
+displayColumn = "title"
 ==
 <div x-data="{ enrol: false }" x-subscribe x-cloak>
     <div x-show.transition.opacity="$store.enrol.open"
@@ -68,9 +71,9 @@
                                     <select id="course"
                                             class="mt-1 block form-select w-full py-2 px-3 py-0 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                                     >
-                                        <option>NCFE Level 1 Award in Preparing to work in Adult Social Care</option>
-                                        <option>Course 2</option>
-                                        <option>Course 3</option>
+                                        {% for course in records %}
+                                        <option>{{ course.title }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
 
