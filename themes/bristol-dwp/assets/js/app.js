@@ -259,7 +259,7 @@
 
       modifiers = settingBothSidesOfTransition ? modifiers.filter((i, index) => index < modifiers.indexOf('out')) : modifiers;
       transitionHelperIn(el, modifiers, show); // Otherwise, we can assume x-transition:enter.
-    } else if (attrs.filter(attr => ['enter', 'enter-start', 'enter-end'].includes(attr.value)).length > 0) {
+    } else if (attrs.length > 0) {
       transitionClassesIn(el, attrs, show);
     } else {
       // If neither, just show that damn thing.
@@ -277,7 +277,7 @@
       const settingBothSidesOfTransition = modifiers.includes('in') && modifiers.includes('out');
       modifiers = settingBothSidesOfTransition ? modifiers.filter((i, index) => index > modifiers.indexOf('out')) : modifiers;
       transitionHelperOut(el, modifiers, settingBothSidesOfTransition, hide);
-    } else if (attrs.filter(attr => ['leave', 'leave-start', 'leave-end'].includes(attr.value)).length > 0) {
+    } else if (attrs.length > 0) {
       transitionClassesOut(el, attrs, hide);
     } else {
       hide();
@@ -490,16 +490,22 @@
     items.forEach((item, index) => {
       let iterationScopeVariables = getIterationScopeVariables(iteratorNames, item, index, items, extraVars());
       let currentKey = generateKeyForIteration(component, templateEl, index, iterationScopeVariables);
-      let nextEl = lookAheadForMatchingKeyedElementAndMoveItIfFound(currentEl.nextElementSibling, currentKey); // If we haven't found a matching key, insert the element at the current position.
+      let nextEl = currentEl.nextElementSibling; // If there's no previously x-for processed element ahead, add one.
 
-      if (!nextEl) {
+      if (!nextEl || nextEl.__x_for_key === undefined) {
         nextEl = addElementInLoopAfterCurrentEl(templateEl, currentEl); // And transition it in if it's not the first page load.
 
         transitionIn(nextEl, () => {}, initialUpdate);
         nextEl.__x_for = iterationScopeVariables;
-        component.initializeElements(nextEl, () => nextEl.__x_for); // Otherwise update the element we found.
+        component.initializeElements(nextEl, () => nextEl.__x_for);
       } else {
-        // Temporarily remove the key indicator to allow the normal "updateElements" to work.
+        nextEl = lookAheadForMatchingKeyedElementAndMoveItIfFound(nextEl, currentKey); // If we haven't found a matching key, just insert the element at the current position
+
+        if (!nextEl) {
+          nextEl = addElementInLoopAfterCurrentEl(templateEl, currentEl);
+        } // Temporarily remove the key indicator to allow the normal "updateElements" to work
+
+
         delete nextEl.__x_for_key;
         nextEl.__x_for = iterationScopeVariables;
         component.updateElements(nextEl, () => nextEl.__x_for);
@@ -574,8 +580,7 @@
   }
 
   function lookAheadForMatchingKeyedElementAndMoveItIfFound(nextEl, currentKey) {
-    if (!nextEl) return; // If the the key's DO match, no need to look ahead.
-
+    // If the the key's DO match, no need to look ahead.
     if (nextEl.__x_for_key === currentKey) return nextEl; // If they don't, we'll look ahead for a match.
     // If we find it, we'll move it to the current position in the loop.
 
@@ -645,8 +650,17 @@
         }
       } else if (el.tagName === 'SELECT') {
         updateSelect(el, value);
+      } else if (el.type === 'text') {
+        // Cursor position should be restored back to origin due to a safari bug
+        const selectionStart = el.selectionStart;
+        const selectionEnd = el.selectionEnd;
+        const selectionDirection = el.selectionDirection;
+        el.value = value;
+
+        if (el === document.activeElement && selectionStart !== null) {
+          el.setSelectionRange(selectionStart, selectionEnd, selectionDirection);
+        }
       } else {
-        if (el.value === value) return;
         el.value = value;
       }
     } else if (attrName === 'class') {
@@ -659,23 +673,25 @@
         const keysSortedByBooleanValue = Object.keys(value).sort((a, b) => value[a] - value[b]);
         keysSortedByBooleanValue.forEach(classNames => {
           if (value[classNames]) {
-            classNames.split(' ').filter(Boolean).forEach(className => el.classList.add(className));
+            classNames.split(' ').forEach(className => el.classList.add(className));
           } else {
-            classNames.split(' ').filter(Boolean).forEach(className => el.classList.remove(className));
+            classNames.split(' ').forEach(className => el.classList.remove(className));
           }
         });
       } else {
         const originalClasses = el.__x_original_classes || [];
-        const newClasses = value.split(' ').filter(Boolean);
+        const newClasses = value.split(' ');
         el.setAttribute('class', arrayUnique(originalClasses.concat(newClasses)).join(' '));
       }
-    } else {
-      // If an attribute's bound value is null, undefined or false, remove the attribute
-      if ([null, undefined, false].includes(value)) {
-        el.removeAttribute(attrName);
+    } else if (isBooleanAttr(attrName)) {
+      // Boolean attributes have to be explicitly added and removed, not just set.
+      if (!!value) {
+        el.setAttribute(attrName, '');
       } else {
-        isBooleanAttr(attrName) ? el.setAttribute(attrName, attrName) : el.setAttribute(attrName, value);
+        el.removeAttribute(attrName);
       }
+    } else {
+      el.setAttribute(attrName, value);
     }
   }
 
@@ -1713,7 +1729,7 @@
   }
 
   const Alpine = {
-    version: "2.3.5",
+    version: "2.3.3",
     start: async function start() {
       if (!isTesting()) {
         await domReady();
@@ -1845,8 +1861,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jakefeeley/Documents/GitHub/minisite/themes/bristol-dwp/resources/js/app.js */"./themes/bristol-dwp/resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jakefeeley/Documents/GitHub/minisite/themes/bristol-dwp/resources/sass/app.scss */"./themes/bristol-dwp/resources/sass/app.scss");
+__webpack_require__(/*! /Users/danharrin/Sites/dwp/themes/bristol-dwp/resources/js/app.js */"./themes/bristol-dwp/resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/danharrin/Sites/dwp/themes/bristol-dwp/resources/sass/app.scss */"./themes/bristol-dwp/resources/sass/app.scss");
 
 
 /***/ })
