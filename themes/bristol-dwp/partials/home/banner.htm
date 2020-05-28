@@ -1,15 +1,17 @@
 ==
-<div class="bg-cover bg-center"
-    style="background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url('https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/hero-banner/robot-girl.jpg?auto=format%2Ccompress&dpr=1');">
-    <div class="max-w-8xl mx-auto">
-        <div class="py-32 pl-56 max-w-4xl">
-            <h1 class="text-white font-medium text-5xl">Now is a great time to boost your skillset and employability.</h1>
-            <p>If you’re unemployed and looking to get back into work quickly in Bristol, you can get nationally recognised
+<div x-data="{}" x-subscribe class="bg-cover bg-center"
+    style="background-image: linear-gradient(90deg, rgba(143,01,96,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(143,01,96,0.8) 100%), url('https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/front-page-story/hero-banner/robot-girl.jpg?auto=format%2Ccompress&dpr=1');">
+    <div class="max-w-7xl px-4 sm:px-6 lg:px-10 mx-auto">
+        <div class="py-8 md:py-20 max-w-2xl">
+            <h1 class="text-white font-extrabold text-5xl">Boost your skillset <br /> and employability</h1>
+            <p class="text-white font-medium text-xl mt-4">If you’re unemployed and looking to get back into work quickly in Bristol, you can get nationally recognised
             qualifications from the comfort of your home. You can do it all in your own time too - no classrooms, no timetables, no
             fuss. Not to mention, it's free!</p>
-            <button
-                class="outline-none px-10 py-5 bg-white rounded-sm shadow mt-6 text-blue-700 font-medium text-lg hover:bg-gray-100 transition-all-"
-                type="button">Join for free</button>
+            <div class="max-w-xs rounded-md shadow mt-6">
+                <button @click="$store.enrol.open = true" type="button" type="button" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-yellow-200 hover:bg-yellow-100 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                    Enrol now for free &rarr;
+                </button>
+            </div>
         </div>
     </div>
 </div>
