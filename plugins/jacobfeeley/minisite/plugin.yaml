@@ -9,3 +9,7 @@ navigation:
         label: Courses
         url: jacobfeeley/minisite/courses
         icon: icon-graduation-cap
+    main-menu-testimonials:
+        label: Testimonials
+        url: jacobfeeley/minisite/testimonials
+        icon: icon-user

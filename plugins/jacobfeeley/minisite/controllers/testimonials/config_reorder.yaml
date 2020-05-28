@@ -1,0 +1,4 @@
+title: Testimonials
+modelClass: JacobFeeley\Minisite\Models\Testimonial
+toolbar:
+    buttons: reorder_toolbar

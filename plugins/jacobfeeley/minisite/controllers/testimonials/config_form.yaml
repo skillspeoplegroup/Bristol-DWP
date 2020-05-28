@@ -1,0 +1,10 @@
+name: Testimonials
+form: $/jacobfeeley/minisite/models/testimonial/fields.yaml
+modelClass: JacobFeeley\Minisite\Models\Testimonial
+defaultRedirect: jacobfeeley/minisite/testimonials
+create:
+    redirect: 'jacobfeeley/minisite/testimonials/update/:id'
+    redirectClose: jacobfeeley/minisite/testimonials
+update:
+    redirect: jacobfeeley/minisite/testimonials
+    redirectClose: jacobfeeley/minisite/testimonials

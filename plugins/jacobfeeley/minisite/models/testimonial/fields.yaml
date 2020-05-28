@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: 'Learner Name'
+        span: full
+        type: text
+    content:
+        label: 'Learner Testimonial'
+        size: small
+        span: full
+        type: richeditor
