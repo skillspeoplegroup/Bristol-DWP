@@ -3,13 +3,8 @@ url = "/"
 layout = "main-layout"
 is_hidden = 0
 ==
-{% partial 'global/header' %}
-{% partial 'global/modal' %}
+{% partial 'home/banner' %}
 
-<div class="pt-20">
-    {% partial 'home/banner' %}
+{% partial 'home/courses' %}
 
-    {% partial 'home/courses' %}
-
-    {% partial 'home/testimonials' %}
-</div>
+{% partial 'home/testimonials' %}

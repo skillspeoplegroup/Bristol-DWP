@@ -1,0 +1,13 @@
+title = "Course"
+url = "/courses/:slug"
+layout = "main-layout"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "JacobFeeley\Minisite\Models\Course"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Course not found"
+==
+{% partial 'course/banner' %}

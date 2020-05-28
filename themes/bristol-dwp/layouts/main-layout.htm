@@ -15,7 +15,12 @@
     <script src="/themes/bristol-dwp/assets/js/app.js" defer></script>
 </head>
 <body>
-{% page %}
+{% partial 'global/header' %}
+{% partial 'global/modal' %}
+
+<div class="pt-20">
+    {% page %}
+</div>
 
 {% partial 'global/footer' %}
 </body>
