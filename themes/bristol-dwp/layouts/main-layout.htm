@@ -3,9 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ this.page.title }} - Skills Academies</title>
 
@@ -17,10 +15,13 @@
             html { font-family: 'Inter var', sans-serif; }
         }
     </style>
-
     <script src="/themes/bristol-dwp/assets/js/app.js" defer></script>
 </head>
 <body>
-{% page %}
+
+    {% page %}
+
+    {% partial 'global/footer' %}
+    
 </body>
 </html>
