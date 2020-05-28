@@ -77,20 +77,30 @@ pageNumber = "{{ :page }}"
                                            class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                                     />
                                 </div>
-
-                                <div class="col-span-6 sm:col-span-6">
-                                    <label for="course" class="block text-sm font-medium leading-5 text-gray-700">
-                                        Course
-                                    </label>
-                                    <select id="course"
-                                            class="mt-1 block form-select w-full py-2 px-3 py-0 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                                    >
-                                        {% for course in records %}
-                                        <option value="{{ course.id }}">{{ course.title }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-
+                                {% if this.page.title == 'Home' %}
+                                    <div class="col-span-6 sm:col-span-6">
+                                        <label for="course" class="block text-sm font-medium leading-5 text-gray-700">
+                                            Course
+                                        </label>
+                                        <select id="course"
+                                                class="mt-1 block form-select w-full py-2 px-3 py-0 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                                        >
+                                            {% for course in records %}
+                                            <option value="{{ course.id }}">{{ course.title }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                {% else %}
+                                    <div class="col-span-6 sm:col-span-6">
+                                        <label for="course"
+                                               class="block text-sm font-medium leading-5 text-gray-700"
+                                        >Course
+                                        </label>
+                                        <input id="course" value="{{ record.title }}"
+                                               class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" disabled
+                                        />
+                                    </div>
+                                {% endif %}
                             </div>
                         </form>
                     </div>
