@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ this.page.title }} - Skills Academies</title>
+    <title>{% if this.page.title == 'Home' %}Boost your skillset & employability{% else %} {{ record.title }} {% endif %} - Skills Academies</title>
 
     <link rel="stylesheet" href="/themes/bristol-dwp/assets/css/app.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
