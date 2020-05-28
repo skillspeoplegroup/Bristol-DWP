@@ -39,14 +39,10 @@ tabs:
             type: richeditor
             tab: 'What skills will you learn?'
         topics_covered:
-            label: 'Topics covered'
-            mode: string
-            separator: comma
-            customTags: true
-            useKey: false
+            label: 'Topics Covered'
             span: full
-            type: taglist
-            commentAbove: 'Enter the topic & press enter to add new'
+            size: large
+            type: richeditor
             tab: 'Topics covered'
         about_this_field:
             label: 'About this field'
