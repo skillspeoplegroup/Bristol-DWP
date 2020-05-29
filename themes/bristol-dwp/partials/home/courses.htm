@@ -1,5 +1,5 @@
 [builderList]
-modelClass = "JacobFeeley\Minisite\Models\Course"
+modelClass = "JacobFeeley\Minisite\Models\Category"
 scopeValue = "{{ :scope }}"
 displayColumn = "title"
 noRecordsMessage = "No records found"
@@ -16,24 +16,29 @@ pageNumber = "{{ :page }}"
                 Click on any of the courses below for more information
             </p>
         </div>
-        <div class="mt-12 grid gap-10 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-            {% for course in records %}
-            <a href="/courses/{{ course.slug }}" class="flex flex-col rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 focus:-translate-y-2 transition duration-150 ease-in-out">
-                <div class="flex-shrink-0">
-                    <img class="h-48 w-full object-cover" src="{{ course.banner.path }}" alt="" />
-                </div>
-                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-                    <div class="flex-1">
-                        <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                            {{ course.title }}
-                        </h3>
-                        <p class="mt-3 text-base leading-6 text-gray-500">
-                            {{ course.tag_line }}
-                        </p>
+        {% for category in records %}
+            <h2 class="mt-12 text-2xl leading-9 tracking-tight font-medium text-gray-800 sm:leading-10">
+                {{ category.title }}
+            </h2>
+            <div class="mt-8 grid gap-10 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+                {% for course in category.courses %}
+                <a href="/courses/{{ course.slug }}" class="flex flex-col rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 focus:-translate-y-2 transition duration-150 ease-in-out">
+                    <div class="flex-shrink-0">
+                        <img class="h-48 w-full object-cover" src="{{ course.banner.path }}" alt="" />
                     </div>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
+                    <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+                                {{ course.title }}
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                {{ course.tag_line }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 </div>
