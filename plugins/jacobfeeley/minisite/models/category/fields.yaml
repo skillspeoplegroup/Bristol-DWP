@@ -1,0 +1,5 @@
+fields:
+    title:
+        label: 'Category Title'
+        span: full
+        type: text

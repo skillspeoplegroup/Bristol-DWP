@@ -9,6 +9,11 @@ navigation:
         label: Courses
         url: jacobfeeley/minisite/courses
         icon: icon-graduation-cap
+        sideMenu:
+            side-menu-categories:
+                label: Categories
+                url: /
+                icon: icon-book
     main-menu-testimonials:
         label: Testimonials
         url: jacobfeeley/minisite/testimonials

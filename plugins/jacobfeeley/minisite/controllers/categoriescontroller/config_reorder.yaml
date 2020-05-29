@@ -1,0 +1,4 @@
+title: CategoriesController
+modelClass: JacobFeeley\Minisite\Models\Category
+toolbar:
+    buttons: reorder_toolbar
