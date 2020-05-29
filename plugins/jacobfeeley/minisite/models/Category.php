@@ -1,6 +1,7 @@
 <?php namespace JacobFeeley\Minisite\Models;
 
 use Model;
+use \October\Rain\Database\Traits\Sortable;
 
 /**
  * Model
