@@ -8,7 +8,7 @@ use Model;
 class Course extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     use \October\Rain\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
@@ -33,4 +33,7 @@ class Course extends Model
       'banner' => 'System\Models\File'
     ];
 
+    public $belongsToMany = [
+        'categories' => [Category::class, 'table' => 'jacobfeeley_minisite_category_course'],
+    ];
 }

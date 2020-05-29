@@ -9,7 +9,7 @@ use \October\Rain\Database\Traits\Sortable;
 class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     use \October\Rain\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
@@ -24,5 +24,9 @@ class Category extends Model
      * @var array Validation rules
      */
     public $rules = [
+    ];
+
+    public $belongsToMany = [
+        'courses' => [Course::class, 'table' => 'jacobfeeley_minisite_category_course'],
     ];
 }

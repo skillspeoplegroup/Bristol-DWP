@@ -12,7 +12,7 @@ navigation:
         sideMenu:
             side-menu-categories:
                 label: Categories
-                url: /
+                url: jacobfeeley/minisite/categoriescontroller
                 icon: icon-book
     main-menu-testimonials:
         label: Testimonials

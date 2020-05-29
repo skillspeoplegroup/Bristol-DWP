@@ -23,6 +23,10 @@ fields:
             extension: auto
         span: auto
         type: fileupload
+    categories:
+        span: auto
+        path: $/jacobfeeley/minisite/controllers/courses/_categories.htm
+        type: partial
 tabs:
     fields:
         summary:

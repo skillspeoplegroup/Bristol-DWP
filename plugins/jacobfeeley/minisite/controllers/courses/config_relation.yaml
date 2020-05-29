@@ -1,0 +1,8 @@
+categories:
+    label: Categories
+    view:
+        list: $/jacobfeeley/minisite/models/category/columns.yaml
+        toolbarButtons: add|remove|create|delete
+    manage:
+        list: $/jacobfeeley/minisite/models/category/columns.yaml
+        form: $/jacobfeeley/minisite/models/category/fields.yaml
