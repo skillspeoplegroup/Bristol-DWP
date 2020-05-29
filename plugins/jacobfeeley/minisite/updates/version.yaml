@@ -12,3 +12,9 @@
 1.0.5:
     - 'Updated table jacobfeeley_minisite_courses'
     - builder_table_update_jacobfeeley_minisite_courses_2.php
+1.0.6:
+    - 'Created table jacobfeeley_minisite_categories'
+    - builder_table_create_jacobfeeley_minisite_categories.php
+1.0.7:
+    - 'Created table jacobfeeley_minisite_category_course'
+    - builder_table_create_jacobfeeley_minisite_category_course.php
